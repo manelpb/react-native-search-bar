@@ -145,6 +145,7 @@ RCT_EXPORT_METHOD(unFocus:(nonnull NSNumber *)reactTag)
      RNSearchBar *searchBar = viewRegistry[reactTag];
      
      if ([searchBar isKindOfClass:[RNSearchBar class]]) {
+       [searchBar setText:@""];
        [searchBar resignFirstResponder];
      } else {
        RCTLogError(@"Cannot unFocus: %@ (tag #%@) is not RNSearchBar", searchBar, reactTag);
